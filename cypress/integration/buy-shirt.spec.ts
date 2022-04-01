@@ -11,7 +11,6 @@ describe("Buy a t-shirt", () => {
     cy.get("#email").type("tomas.alvarez@perficient.com");
     cy.get("#passwd").type("test123");
 
-    
     // Debes completar la prueba ... implementa los pasos 8 al 13, del proceso de compra
     cy.get("#SubmitLogin").click();
     cy.get("button[name='processAddress']").click();
@@ -21,7 +20,7 @@ describe("Buy a t-shirt", () => {
 
     cy.get(".bankwire").click();
 
-    cy.contains("span","I confirm my order").click();
+    cy.contains("span", "I confirm my order").click();
 
     cy.get("#center_column > div > p > strong")
       .should("have.text", "Your order on My Store is complete.");
