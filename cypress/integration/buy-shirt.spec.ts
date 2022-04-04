@@ -1,7 +1,13 @@
 /// <reference types="Cypress" />
 
+import { MenuContentPage, CheckoutPage, PLPPage } from "../page/index";
+
+const menuContentPage = new MenuContentPage();
+const plpPage = new PLPPage();
+const checkoutPage = new CheckoutPage();
+
 describe("Buy a t-shirt", () => {
-  it.only("then the t-shirt should be bought", () => {
+  it("then the t-shirt should be bought", () => {
     cy.visit("http://automationpractice.com/");
     cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
     cy.get("#center_column a.button.ajax_add_to_cart_button.btn.btn-default").click();
@@ -24,5 +30,32 @@ describe("Buy a t-shirt", () => {
 
     cy.get("#center_column > div > p > strong")
       .should("have.text", "Your order on My Store is complete.");
+  });
+
+  it.only("then the t-shirt should be bought POM", () => {
+    menuContentPage.visitMenuContentPage();
+    menuContentPage.goToTShirtMenu();
+
+    //cy.get("[style*='display: block;'] .button-container > a").click();
+
+    plpPage.addToCartButton();
+    plpPage.proceedToCheckoutButton();
+
+    checkoutPage.proceedToCheckoutButtonSummary();
+
+    checkoutPage.emailAddressInput("tomas.alvarez@perficient.com");
+    checkoutPage.passwordInput("test123");
+    checkoutPage.signInButton();
+
+    checkoutPage.proceedToCheckoutButton();
+
+    checkoutPage.tandcCheckox();
+    checkoutPage.proceedToCheckoutButton();
+
+    checkoutPage.bankwireOption();
+
+    checkoutPage.confirmOrderButton();
+
+    checkoutPage.orderPlacedTitle();
   });
 });
