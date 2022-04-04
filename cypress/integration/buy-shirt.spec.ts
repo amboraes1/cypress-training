@@ -1,16 +1,34 @@
 /// <reference types="Cypress" />
 
-import { MenuContentPage, CheckoutPage, PLPPage } from "../page/index";
+import {
+  MenuContentPage,
+  CartPage,
+  PLPPage,
+  SigninPage,
+  AddressesPage,
+  ShippingPage,
+  PaymentPage,
+  ConfirmPaymentPage,
+  OrderConfirmationPage,
+} from "../page/index";
 
 const menuContentPage = new MenuContentPage();
 const plpPage = new PLPPage();
-const checkoutPage = new CheckoutPage();
+const cartPage = new CartPage();
+const signinPage = new SigninPage();
+const addressesPage = new AddressesPage();
+const shippingPage = new ShippingPage();
+const paymentPage = new PaymentPage();
+const confirmPaymentPage = new ConfirmPaymentPage();
+const orderConfirmationPage = new OrderConfirmationPage();
 
 describe("Buy a t-shirt", () => {
   it("then the t-shirt should be bought", () => {
     cy.visit("http://automationpractice.com/");
     cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
-    cy.get("#center_column a.button.ajax_add_to_cart_button.btn.btn-default").click();
+    cy.get(
+      "#center_column a.button.ajax_add_to_cart_button.btn.btn-default",
+    ).click();
     cy.get("[style*='display: block;'] .button-container > a").click();
     cy.get(".cart_navigation span").click();
 
@@ -28,34 +46,34 @@ describe("Buy a t-shirt", () => {
 
     cy.contains("span", "I confirm my order").click();
 
-    cy.get("#center_column > div > p > strong")
-      .should("have.text", "Your order on My Store is complete.");
+    cy.get("#center_column > div > p > strong").should(
+      "have.text",
+      "Your order on My Store is complete.",
+    );
   });
 
   it.only("then the t-shirt should be bought POM", () => {
     menuContentPage.visitMenuContentPage();
     menuContentPage.goToTShirtMenu();
 
-    //cy.get("[style*='display: block;'] .button-container > a").click();
-
     plpPage.addToCartButton();
     plpPage.proceedToCheckoutButton();
 
-    checkoutPage.proceedToCheckoutButtonSummary();
+    cartPage.proceedToCheckoutButton();
 
-    checkoutPage.emailAddressInput("tomas.alvarez@perficient.com");
-    checkoutPage.passwordInput("test123");
-    checkoutPage.signInButton();
+    signinPage.emailAddressInput("tomas.alvarez@perficient.com");
+    signinPage.passwordInput("test123");
+    signinPage.signInButton();
 
-    checkoutPage.proceedToCheckoutButton();
+    addressesPage.proceedToCheckoutButton();
 
-    checkoutPage.tandcCheckox();
-    checkoutPage.proceedToCheckoutButton();
+    shippingPage.tandcCheckox();
+    shippingPage.proceedToCheckoutButton();
 
-    checkoutPage.bankwireOption();
+    paymentPage.bankwireOption();
 
-    checkoutPage.confirmOrderButton();
+    confirmPaymentPage.confirmOrderButton();
 
-    checkoutPage.orderPlacedTitle();
+    orderConfirmationPage.orderPlacedTitle();
   });
 });
