@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 class ShippingPage {
-    public tandcCheckox(): void {
+    public tandcCheckbox(): void {
         cy.get("#cgv").click();
     }
 

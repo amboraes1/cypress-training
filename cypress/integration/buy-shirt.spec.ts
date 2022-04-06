@@ -23,6 +23,7 @@ const confirmPaymentPage = new ConfirmPaymentPage();
 const orderConfirmationPage = new OrderConfirmationPage();
 
 describe("Buy a t-shirt", () => {
+  /*
   it("then the t-shirt should be bought", () => {
     cy.visit("http://automationpractice.com/");
     cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
@@ -51,7 +52,7 @@ describe("Buy a t-shirt", () => {
       "Your order on My Store is complete.",
     );
   });
-
+*/
   it.only("then the t-shirt should be bought POM", () => {
     menuContentPage.visitMenuContentPage();
     menuContentPage.goToTShirtMenu();
@@ -67,7 +68,7 @@ describe("Buy a t-shirt", () => {
 
     addressesPage.proceedToCheckoutButton();
 
-    shippingPage.tandcCheckox();
+    shippingPage.tandcCheckbox();
     shippingPage.proceedToCheckoutButton();
 
     paymentPage.bankwireOption();
