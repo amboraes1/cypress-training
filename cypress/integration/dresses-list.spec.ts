@@ -7,7 +7,7 @@ import { MenuContentPage, DressesListPage } from "../page/index";
 describe("the user navigates to the dresses page should", () => {
   let menuContentPage: MenuContentPage;
   let dressesListPage: DressesListPage;
-  const dressesName:String[] = [];
+  const dressesName:string[] = [];
 
   before(() => {
     menuContentPage = new MenuContentPage();

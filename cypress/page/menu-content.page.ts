@@ -4,9 +4,9 @@ class MenuContentPage {
     private dressesMenu: string;
 
     constructor() {
-        this.tShirtMenu = "#block_top_menu > ul > li:nth-child(3) > a";
+        this.tShirtMenu = "#block_top_menu > ul > li> a[title='T-shirts']";
         this.menuContentPageURL = "http://automationpractice.com/";
-        this.dressesMenu = ".sf-menu > :nth-child(2) > .sf-with-ul";
+        this.dressesMenu = "#block_top_menu > ul > li > a[title='Dresses']";
     }
 
     public visitMenuContentPage(): void {

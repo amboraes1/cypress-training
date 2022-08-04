@@ -22,8 +22,8 @@ let shippingPage: ShippingPage;
 let paymentPage: PaymentPage;
 let confirmPaymentPage: ConfirmPaymentPage;
 let orderConfirmationPage: OrderConfirmationPage;
-let userName:String;
-let password:String;
+let userName:string;
+let password:string;
 
 describe("Buy a t-shirt", () => {
   /*
@@ -78,9 +78,7 @@ describe("Buy a t-shirt", () => {
 
     cartPage.proceedToCheckoutButton();
 
-    signinPage.emailAddressInput(userName);
-    signinPage.passwordInput(password);
-    signinPage.signInButton();
+    signinPage.signIn(userName, password);
 
     addressesPage.proceedToCheckoutButton();
 
