@@ -73,8 +73,8 @@ describe("Buy a t-shirt", () => {
   it.only("then the t-shirt should be bought POM", () => {
     menuContentPage.goToTShirtMenu();
 
-    plpPage.addToCartButton();
-    plpPage.proceedToCheckoutButton();
+    plpPage.addToCartButton('Faded Short Sleeve T-shirts');
+   plpPage.proceedToCheckoutButton();
 
     cartPage.proceedToCheckoutButton();
 
