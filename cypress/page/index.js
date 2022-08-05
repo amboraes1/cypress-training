@@ -1,9 +1,0 @@
-export { MenuContentPage } from "./menu-content.page";
-export { PLPPage } from "./plp.page";
-export { CartPage } from "./cart.page";
-export { SigninPage } from "./signin.page";
-export { AddressesPage } from "./addresses.page";
-export { ShippingPage } from "./shipping.page";
-export { PaymentPage } from "./payment.page";
-export { ConfirmPaymentPage } from "./confirmpayment.page";
-export { OrderConfirmationPage } from "./orderconfirmation.page";

@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+// @ts-ignore
 import {
   MenuContentPage,
   CartPage,
@@ -12,15 +13,17 @@ import {
   OrderConfirmationPage,
 } from "../page/index";
 
-const menuContentPage = new MenuContentPage();
-const plpPage = new PLPPage();
-const cartPage = new CartPage();
-const signinPage = new SigninPage();
-const addressesPage = new AddressesPage();
-const shippingPage = new ShippingPage();
-const paymentPage = new PaymentPage();
-const confirmPaymentPage = new ConfirmPaymentPage();
-const orderConfirmationPage = new OrderConfirmationPage();
+let menuContentPage: MenuContentPage;
+let plpPage: PLPPage;
+let cartPage: CartPage;
+let signinPage: SigninPage;
+let addressesPage: AddressesPage;
+let shippingPage: ShippingPage;
+let paymentPage: PaymentPage;
+let confirmPaymentPage: ConfirmPaymentPage;
+let orderConfirmationPage: OrderConfirmationPage;
+let userName:string;
+let password:string;
 
 describe("Buy a t-shirt", () => {
   /*
@@ -53,8 +56,21 @@ describe("Buy a t-shirt", () => {
     );
   });
 */
-  it.only("then the t-shirt should be bought POM", () => {
+  before(() => {
+    menuContentPage = new MenuContentPage();
+    plpPage = new PLPPage();
+    cartPage = new CartPage();
+    signinPage = new SigninPage();
+    addressesPage = new AddressesPage();
+    shippingPage = new ShippingPage();
+    paymentPage = new PaymentPage();
+    confirmPaymentPage = new ConfirmPaymentPage();
+    orderConfirmationPage = new OrderConfirmationPage();
+    userName = "tomas.alvarez@perficient.com";
+    password = "test123";
     menuContentPage.visitMenuContentPage();
+  });
+  it.only("then the t-shirt should be bought POM", () => {
     menuContentPage.goToTShirtMenu();
 
     plpPage.addToCartButton();
@@ -62,9 +78,7 @@ describe("Buy a t-shirt", () => {
 
     cartPage.proceedToCheckoutButton();
 
-    signinPage.emailAddressInput("tomas.alvarez@perficient.com");
-    signinPage.passwordInput("test123");
-    signinPage.signInButton();
+    signinPage.signIn(userName, password);
 
     addressesPage.proceedToCheckoutButton();
 
