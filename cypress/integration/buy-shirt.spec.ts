@@ -70,10 +70,10 @@ describe("Buy a t-shirt", () => {
     password = "test123";
     menuContentPage.visitMenuContentPage();
   });
-  it.only("then the t-shirt should be bought POM", () => {
+  it("then the t-shirt should be bought POM", () => {
     menuContentPage.goToTShirtMenu();
 
-    plpPage.addToCartButton();
+    plpPage.addToCartButton("Faded Short Sleeve T-shirts");
     plpPage.proceedToCheckoutButton();
 
     cartPage.proceedToCheckoutButton();
