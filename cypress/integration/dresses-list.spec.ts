@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line import/extensions
 // @ts-ignore
-import { MenuContentPage, DressesListPage } from "../page/index";
+import { MenuContentPage, DressesListPage } from "../page/index.ts";
 
 describe("the user navigates to the dresses page should", () => {
   let menuContentPage: MenuContentPage;

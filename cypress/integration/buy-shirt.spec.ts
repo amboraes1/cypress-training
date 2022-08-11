@@ -11,7 +11,7 @@ import {
   PaymentPage,
   ConfirmPaymentPage,
   OrderConfirmationPage,
-} from "../page/index";
+} from "../page/index.ts";
 
 let menuContentPage: MenuContentPage;
 let plpPage: PLPPage;
