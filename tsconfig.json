@@ -4,6 +4,7 @@
         "module": "commonjs",
         "skipLibCheck": true,
         "strict": true,
+        "lib": ["es5", "dom"],
         "types": [
             "cypress",
             "node"
