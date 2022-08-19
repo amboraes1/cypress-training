@@ -21,4 +21,5 @@ class MenuContentPage {
     cy.get(this.dressesMenu).click();
   }
 }
-export { MenuContentPage }
+// eslint-disable-next-line import/prefer-default-export
+export { MenuContentPage };
