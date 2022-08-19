@@ -20,6 +20,7 @@ describe("Fill form page", () => {
     formPage = new PersonalFormPage();
   });
   it("the form should be filled", () => {
+    Cypress.on("uncaught:exception", () => false);
     formPage.visitFormPage();
     // console.log("antes del fill form");
     formPage.fillForm(personalInformation);
