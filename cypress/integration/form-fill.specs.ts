@@ -1,8 +1,6 @@
-import {
-  PersonalFormPage,
-} from "../page/index.ts";
+import { PersonalFormPage } from "../page/index.ts";
 
-let formPage : PersonalFormPage;
+let formPage: PersonalFormPage;
 
 // eslint-disable-next-line no-unused-vars
 const personalInformation = {
@@ -13,16 +11,19 @@ const personalInformation = {
   mobileNumber: "3656589156",
   hobbies: ["Music", "Reading"],
   currentAddress: "Av siempreViva # 123",
+  state: "NCR",
+  city: "Delhi",
 };
 
 describe("Fill form page", () => {
   before(() => {
     formPage = new PersonalFormPage();
-  });
-  it("the form should be filled", () => {
     Cypress.on("uncaught:exception", () => false);
     formPage.visitFormPage();
-    // console.log("antes del fill form");
+  });
+  it("the form should be filled", () => {
     formPage.fillForm(personalInformation);
+
+    formPage.checkData(personalInformation);
   });
 });
