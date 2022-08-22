@@ -31,7 +31,7 @@ class PersonalFormPage {
     cy.visit(this.formUrl);
   }
 
-  fillHobbies(hobbies: string[]): void {
+  private fillHobbies(hobbies: string[]): void {
     // eslint-disable-next-line guard-for-in,no-restricted-syntax
     for (let hobbie in hobbies) {
       cy.get(this.hobbiesInput)
@@ -75,6 +75,10 @@ class PersonalFormPage {
     cy.get(this.submitButton).click({ force: true });
   }
 
+  private getModalTable(inforequested: string) {
+    return cy.get(this.modalInstance).contains("td", inforequested).siblings();
+  }
+
   // eslint-disable-next-line class-methods-use-this
   public checkData(personalInformation: {
     name: string;
@@ -87,39 +91,30 @@ class PersonalFormPage {
     state: string;
     city: string;
   }): void {
-    cy.get(this.modalInstance)
-      .contains("td", "Student Name")
-      .siblings()
-      .should(
-        "have.text",
-        `${personalInformation.name} ${personalInformation.lastName}`
-      );
-    cy.get(this.modalInstance)
-      .contains("td", "Student Email")
-      .siblings()
-      .should("have.text", `${personalInformation.email}`);
-    cy.get(this.modalInstance)
-      .contains("td", "Gender")
-      .siblings()
-      .should("have.text", `${personalInformation.gender}`);
-    cy.get(this.modalInstance)
-      .contains("td", "Hobbies")
-      .siblings()
-      .should(
-        "have.text",
-        `${personalInformation.hobbies[0]}, ${personalInformation.hobbies[1]}`
-      );
-    cy.get(this.modalInstance)
-      .contains("td", "Address")
-      .siblings()
-      .should("have.text", `${personalInformation.currentAddress}`);
-    cy.get(this.modalInstance)
-      .contains("td", "State and City")
-      .siblings()
-      .should(
-        "have.text",
-        `${personalInformation.state} ${personalInformation.city}`
-      );
+    this.getModalTable("Student Name").should(
+      "have.text",
+      `${personalInformation.name} ${personalInformation.lastName}`
+    );
+    this.getModalTable("Student Email").should(
+      "have.text",
+      `${personalInformation.email}`
+    );
+    this.getModalTable("Gender").should(
+      "have.text",
+      `${personalInformation.gender}`
+    );
+    this.getModalTable("Hobbies").should(
+      "have.text",
+      `${personalInformation.hobbies[0]}, ${personalInformation.hobbies[1]}`
+    );
+    this.getModalTable("Address").should(
+      "have.text",
+      `${personalInformation.currentAddress}`
+    );
+    this.getModalTable("State and City").should(
+      "have.text",
+      `${personalInformation.state} ${personalInformation.city}`
+    );
   }
 }
 
