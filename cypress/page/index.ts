@@ -18,3 +18,5 @@ export { ConfirmPaymentPage } from "./confirmpayment.page";
 export { OrderConfirmationPage } from "./orderconfirmation.page";
 // eslint-disable-next-line import/no-unresolved
 export { DressesListPage } from "./dresseslist.page";
+// eslint-disable-next-line import/no-unresolved
+export { PersonalFormPage } from "./personalForm.page";

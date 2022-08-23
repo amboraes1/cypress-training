@@ -1,5 +1,4 @@
 /// <reference types="Cypress" />
-
 // @ts-ignore
 import {
   MenuContentPage,
