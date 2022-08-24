@@ -4,6 +4,7 @@
     "screenshotOnRunFailure": false,
     "responseTimeout": 20000,
     "reporter": "cypress-multi-reporters",
+    "chromeWebSecurity":false,
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
         "mochawesomeReporterOptions": {

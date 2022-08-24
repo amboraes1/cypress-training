@@ -17,8 +17,8 @@ class UploadPage {
     cy.get(this.input).attachFile(this.fileName);
   }
 
-  public getTitleAfterUpload() {
-    return cy.get(".file-footer-caption");
+  public getTitleAfterUpload(): void {
+    cy.get(".file-footer-caption").should("contain.text", this.fileName);
   }
 }
 

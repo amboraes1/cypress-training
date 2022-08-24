@@ -11,7 +11,6 @@ describe("Upload file", () => {
 
   it("Upload file", () => {
     uploadPage.uploadFile();
-
     uploadPage.getTitleAfterUpload();
   });
 });
