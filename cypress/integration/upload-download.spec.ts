@@ -11,6 +11,6 @@ describe("Upload file", () => {
 
   it("Upload file", () => {
     uploadPage.uploadFile();
-    uploadPage.getTitleAfterUpload();
+    uploadPage.getTitleAfterUpload().should("contain.text", "profile.json");
   });
 });

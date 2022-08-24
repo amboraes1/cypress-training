@@ -17,8 +17,9 @@ class UploadPage {
     cy.get(this.input).attachFile(this.fileName);
   }
 
-  public getTitleAfterUpload(): void {
-    cy.get(".file-footer-caption").should("contain.text", this.fileName);
+  // eslint-disable-next-line class-methods-use-this
+  public getTitleAfterUpload() {
+    return cy.get(".file-footer-caption");
   }
 }
 
