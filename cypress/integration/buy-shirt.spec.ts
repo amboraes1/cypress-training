@@ -21,8 +21,8 @@ let shippingPage: ShippingPage;
 let paymentPage: PaymentPage;
 let confirmPaymentPage: ConfirmPaymentPage;
 let orderConfirmationPage: OrderConfirmationPage;
-let userName:string;
-let password:string;
+let userName: string;
+let password: string;
 
 describe("Buy a t-shirt", () => {
   /*
@@ -69,6 +69,7 @@ describe("Buy a t-shirt", () => {
     password = "test123";
     menuContentPage.visitMenuContentPage();
   });
+
   it("then the t-shirt should be bought POM", () => {
     menuContentPage.goToTShirtMenu();
 
