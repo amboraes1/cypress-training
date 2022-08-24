@@ -14,7 +14,8 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-
+// eslint-disable-next-line import/extensions,import/no-unresolved
+import "./commands";
+import "cypress-file-upload";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

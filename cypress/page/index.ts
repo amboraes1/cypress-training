@@ -20,3 +20,5 @@ export { OrderConfirmationPage } from "./orderconfirmation.page";
 export { DressesListPage } from "./dresseslist.page";
 // eslint-disable-next-line import/no-unresolved
 export { PersonalFormPage } from "./personalForm.page";
+// eslint-disable-next-line import/no-unresolved
+export { UploadPage } from "./upload.page";
