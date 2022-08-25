@@ -10,7 +10,7 @@
     "test": "cypress run",
     "pretest": "npm run clean",
     "posttest": "npm run combine-reports && npm run generate-report",
-    "clean": "rm -r cypress/reports/*",
+    "clean": "rm -r cypress/reports/* && rm -r cypress/downloads/*",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
     "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports"
   },
