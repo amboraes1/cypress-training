@@ -13,6 +13,7 @@ describe("Iframe Interaction", () => {
     iframePage.getFrameTitle().should("have.text", "HTML Tutorial");
     iframePage.goToCssPageInFrame();
 
+    iframePage.frameLoaded();
     iframePage.getFrameTitle().should("have.text", "CSS Tutorial");
   });
 });

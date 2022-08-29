@@ -27,6 +27,12 @@ class IframePage {
     // navigate to the css page in the iframe
     cy.iframe(this.iframeSelector).find(this.cssPageSelector).click();
   }
+
+  frameLoaded() {
+    cy.frameLoaded(this.iframeSelector, {
+      url: "https://www.w3schools.com/css/",
+    });
+  }
 }
 
 export { IframePage };
