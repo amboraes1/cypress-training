@@ -15,17 +15,17 @@ class IframePage {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  getFrame() {
+  getFrameTitle() {
     // get the title of the page in the iframe
-    return cy.iframe(this.iframeSelector);
+    return cy
+      .frameLoaded(this.iframeSelector)
+      .iframe(this.iframeSelector)
+      .find("h1");
   }
 
   goToCssPageInFrame() {
     // navigate to the css page in the iframe
-    cy.iframe(this.iframeSelector)
-      .find(this.cssPageSelector)
-      .should("be.visible")
-      .click();
+    cy.iframe(this.iframeSelector).find(this.cssPageSelector).click();
   }
 }
 

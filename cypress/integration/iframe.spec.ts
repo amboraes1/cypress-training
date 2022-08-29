@@ -10,9 +10,9 @@ describe("Iframe Interaction", () => {
   });
 
   it("Interacting with the Iframe ", () => {
-    iframePage.getFrame().find("h1").should("have.text", "HTML Tutorial");
+    iframePage.getFrameTitle().should("have.text", "HTML Tutorial");
     iframePage.goToCssPageInFrame();
 
-    iframePage.getFrame();
+    iframePage.getFrameTitle().should("have.text", "CSS Tutorial");
   });
 });
