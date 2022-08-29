@@ -1,5 +1,6 @@
 class IframePage {
   private pageUrl: string;
+
   private iframeSelector: string;
   private cssPageSelector: string;
 
