@@ -24,3 +24,5 @@ export { PersonalFormPage } from "./personalForm.page";
 export { UploadPage } from "./upload.page";
 // eslint-disable-next-line import/no-unresolved
 export { DownloadPage } from "./download.page";
+// eslint-disable-next-line import/no-unresolved
+export { IframePage } from "./iframe.page";
